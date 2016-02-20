@@ -45,7 +45,7 @@ class Command(BaseCommand):
                             has_migrations = True
                         shown.add(plan_node)
 
-        if has_migrations:
+        if not has_migrations:
             print('Project is migrated')
         else:
             print('Project IS NOT migrated')

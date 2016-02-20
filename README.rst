@@ -15,3 +15,8 @@ Quick start
     ]
 
 2. Run `python manage.py ismigrated` to determine if there are migrations to run.
+
+Authors
+-------
+* Austin Lally: alally@concentricsky.com
+* Francisco Gray: fgray@concentricsky.com
