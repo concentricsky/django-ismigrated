@@ -13,12 +13,11 @@ from django.utils.module_loading import module_has_submodule
 
 class Command(BaseCommand):
     option_list = BaseCommand.option_list + (
-        make_option('--database', action='store', dest='database',
-            default=DEFAULT_DB_ALIAS, help='Nominates a database to check for migrations. '
-                'Defaults to the "default" database.'),
-    )
+        make_option('--database', action='store', dest='database', default=DEFAULT_DB_ALIAS,
+                    help='Nominates a database to check for migrations.' 'Defaults to the "default" database.'),
+        )
 
-    help = "Checks for unapplied migrations. Exits with a nonzero status code if there are none."
+    help = "Checks for un-applied migrations. Exits with a nonzero status code if there are."
 
     def handle(self, *args, **options):
         # Import the 'management' module within each installed app, to register
