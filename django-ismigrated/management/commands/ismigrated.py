@@ -20,6 +20,10 @@ class Command(BaseCommand):
     help = "Checks for un-applied migrations. Exits with a nonzero status code if there are."
 
     def handle(self, *args, **options):
+        # This code is taken almost entirely from Django's migrate command.
+
+        # From django.core.management.commands.migrate, in Command.handle
+
         # Import the 'management' module within each installed app, to register
         # dispatcher events.
         for app_config in apps.get_app_configs():
@@ -29,6 +33,9 @@ class Command(BaseCommand):
         # Get the database we're operating from
         db = options.get('database')
         connection = connections[db]
+
+
+        # From django.core.management.commands.migrate, in Command.show_migration_list
 
         # Load migrations from disk/DB
         loader = MigrationLoader(connection, ignore_no_migrations=True)

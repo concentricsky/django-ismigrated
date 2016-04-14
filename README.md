@@ -5,6 +5,8 @@ Django-IsMigrated is a simple Django app that tells you if a Django project
 has been migrated or not.  It exits with Zero if there are not migrations, and 
 NonZero if there are. 
 
+Tested on Django 1.7, 1.8 and 1.9.
+
 Quick start
 -----------
 
