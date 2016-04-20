@@ -9,10 +9,10 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-ismigrated',
-    version='0.1.4',
+    version='0.1.7',
     packages=find_packages(),
     include_package_data=True,
-    license='BSD License',  # example license
+    license='GNU GPLv3', 
     description='A simple Django app to detect django migrations.',
     long_description=README,
     author='Francisco Gray',
@@ -20,9 +20,11 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.7',  # replace "X.Y" as appropriate
+        'Framework :: Django :: 1.7',
+        'Framework :: Django :: 1.8',
+        'Framework :: Django :: 1.9',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',  # example license
+        'License :: OSI Approved :: GNU General Public License (GPL)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
     ],
