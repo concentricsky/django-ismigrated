@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from optparse import make_option
 from importlib import import_module
 from sys import exit
 
@@ -12,10 +11,11 @@ from django.utils.module_loading import module_has_submodule
 
 
 class Command(BaseCommand):
-    option_list = BaseCommand.option_list + (
-        make_option('--database', action='store', dest='database', default=DEFAULT_DB_ALIAS,
-                    help='Nominates a database to check for migrations.' 'Defaults to the "default" database.'),
-        )
+    def add_arguments(self, parser):
+        parser.add_argument('--database', action='store',
+                            default=DEFAULT_DB_ALIAS,
+                            help='Nominates a database to check for migrations. \
+                                  Defaults to the "default" database.')
 
     help = "Checks for un-applied migrations. Exits with a nonzero status code if there are."
 
